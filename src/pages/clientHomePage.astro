@@ -1,37 +1,38 @@
 ---
-import Controlador from "./../../public/controlador";
 import Layout from "./layouts/layout_global.astro";
 import {getDiscotecas} from "./../../public/api.js";
 import {getResenasRecientes} from "./../../public/api.js";
-//import Discoteca from "./../../src/scripts/discoteca.js";
 import Review from "./../../src/scripts/review.js";
 
+var discotecas = await getDiscotecas();
+//var resenas_recientes = await getResenasRecientes();
+var resenas_recientes = [new Review(1, "Esto es un comentario!", 1, 1, 0.5)];
 
-var discotecas: Array<any> = await getDiscotecas();
-var resenas_recientes: Array<Review> = await getResenasRecientes();
 
 ---
 
-
 <Layout>
     <h3>Hola de nuevo!</h3>
-    <div class="resenas-recientes">
-        <label>Rese&ntilde;as recientes</label>
-        <ul>
-            {resenas_recientes.map((name) => (
-              <li>{name}</li>
-            ))}
-        </ul>
+    <div class="two-divs-container">
+        <div class="resenas-recientes">
+            <h4>Rese&ntilde;as recientes</h4>
+            <div class="comment-container">
+                {resenas_recientes.map((review) => (
+                  <div class="comment">
+                    <h5>{review.discoId}</h5>
+                    <p>{review.comment}</p>
+                  </div>
+                ))}
+            </div>
+        </div>
 
-
-    </div>
-    <div class="discotecas-trending">
-        <h4>Discotecas trending</h4>
-        <ul>
-            {discotecas.map((name) => (
-              <li>{name}</li>
-            ))}
-        </ul>
+        <div class="discotecas-trending">
+            <h4>Discotecas trending</h4>
+            <ul>
+                {discotecas.map((discoteca) => (
+                  <li>{discoteca.name}</li>
+                ))}
+            </ul>
+        </div>
     </div>
 </Layout>
-

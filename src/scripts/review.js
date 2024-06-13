@@ -1,8 +1,10 @@
 export default class Review {
-    constructor(name, email, password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
+    constructor(id, comment, userId, discoId, score) {
+        this.id = id;
+        this.comment = comment;
+        this.userId = userId;
+        this.discoId = discoId;
+        this.score = score;
     }
 
     greet() {
