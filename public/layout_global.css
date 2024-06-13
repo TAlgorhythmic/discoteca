@@ -200,6 +200,7 @@ div.fields {
     flex-direction: column;
     margin: 5%;
     justify-content: center;
+    background-color: white;
     border: 1px solid black;
     border-radius: 25px;
 }
@@ -226,4 +227,28 @@ div.fields {
 }
 .content {
     font-size: 20px;
+}
+div.row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+}
+div.column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+.margin-bottom {
+    margin-bottom: 10px;
+}
+.size-bigger {
+    width: 80px;
+    height: 45px;
+}
+.comment {
+    font-size: 16px;
 }

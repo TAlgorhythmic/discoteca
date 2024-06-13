@@ -1,4 +1,5 @@
 ---
+import Button from "./ButtonAddComment";
 const {name, address, telephoneNumber, rate, comments} = Astro.props;
 
 ---
@@ -24,8 +25,12 @@ const {name, address, telephoneNumber, rate, comments} = Astro.props;
         <p class="entry">Comentarios:</p>
         <div class="comments-div">
             {comments.map((e) => (
-                <p class="content">{e}</p>
+                <p class="content comment">{e}</p>
             ))}
         </div>
     </div>
+    <div class="key-value-div">
+        <Button />
+    </div>
+    
 </div>
