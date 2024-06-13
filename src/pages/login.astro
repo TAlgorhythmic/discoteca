@@ -1,5 +1,50 @@
 ---
 import Controlador from "./../../public/controlador";
+import {createUser} from "./../../public/api.js";
+import Usuario from "./../../src/scripts/usuario";
+import {addButtonListener} from "./../../src/scripts/buttonListener";
+
+function suma( a: any, b: any) {
+    return a + b;
+}
+
+function f() {
+    suma(1, 2);
+}
+
+
+function tryToLogIn(name: string, password: string) {
+    var user: Usuario = new Usuario(name, "something", password);
+    console.log("This is working");
+    createUser(user);
+}
+
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("username");
+    //const email = data.get("email");
+    const password = data.get("password");
+    tryToLogIn(name.toString(), password.toString());
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
+
+// ID único para el botón
+const buttonId = 'testing';
+
+// Este código se ejecutará en el cliente
+if (typeof window !== 'undefined') {
+  addButtonListener(buttonId);
+}
+
+var user = new Usuario("A", "something", "1234");
+createUser(user);
 
 ---
 
@@ -15,14 +60,14 @@ import Controlador from "./../../public/controlador";
     <body>
         <h1>Discotecas</h1>
 
-        <form>
+        <form method="POST">
             <div class="form-group">
                 <label for="usuarioEmail">Usuario:</label>
-                <input type="email" name="usuarioEmail" id="usuarioEmail">
+                <input type="email" name="usuarioEmail" id="usuarioEmail" required>
             </div>
             <div class="form-group">
                 <label for="usuarioPassword">Contraseña:</label>
-                <input type="password" name="usuarioPassword" id="usuarioPassword">
+                <input type="password" name="usuarioPassword" id="usuarioPassword" required>
             </div>
             <div class="form-group">
                 <label class="small-text" for="recordarme">
@@ -30,7 +75,8 @@ import Controlador from "./../../public/controlador";
                 </label>
             </div>
             <div class="form-group">
-                <button type="submit">Log in</button>
+                <button type="button" id="testing">Probando</button>
+                <button type="submit" id="log-in">Log in</button>
             </div>
         </form>
     </body>
