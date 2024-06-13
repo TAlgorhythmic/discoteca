@@ -1,0 +1,31 @@
+---
+const {name, address, telephoneNumber, rate, comments} = Astro.props;
+
+---
+
+<div class="discoteca-div">
+    <div class="key-value-div">
+        <p class="entry">Nombre:</p>
+        <p class="content">{name}</p>
+    </div>
+    <div class="key-value-div">
+        <p class="entry">Direción:</p>
+        <p class="content">{address}</p>
+    </div>
+    <div class="key-value-div">
+        <p class="entry">Teléfono:</p>
+        <p class="content">{telephoneNumber}</p>
+    </div>
+    <div class="key-value-div">
+        <p class="entry">Puntuación:</p>
+        <p class="content">{rate}/5</p>
+    </div>
+    <div class="key-value-div">
+        <p class="entry">Comentarios:</p>
+        <div class="comments-div">
+            {comments.map((e) => (
+                <p class="content">{e}</p>
+            ))}
+        </div>
+    </div>
+</div>

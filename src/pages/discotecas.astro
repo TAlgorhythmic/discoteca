@@ -1,6 +1,6 @@
 ---
 import Layout from "./layouts/layout_global.astro"
-import Discoteca from "./comps/Discotecas";
+import Discoteca from "./comps/discoteca_provider.astro";
 import {getDiscotecas} from "./../../public/api";
 const discotecas = getDiscotecas();
 
@@ -9,9 +9,11 @@ const discotecas = getDiscotecas();
 <Layout>
     <div class="super-div">
         {
-            discotecas.map(e => (
+            <Discoteca name="La Fiesta" address="Calle Marina" telephoneNumber="632813093" rate="3" comments={["Me ha encantado", "Una mierda"]}/>
+            
+            /* discotecas.map(e => (
                 <Discoteca name={e.name} address={e.address} telephoneNumber={e.telephoneNumber} rate={e.rate}/>
-            ))
+            )) */
         }
     </div>
 </Layout>
