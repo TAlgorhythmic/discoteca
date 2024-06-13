@@ -14,9 +14,9 @@ resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 
-var discotecas = [new Discoteca("Pacha Barcelona",1,"Passeig Marítim de la Barceloneta, 34, Barcelona",647835751, 0.5)];
-discotecas.push(new Discoteca("Opium Barcelona",2,"asseig Marítim de la Barceloneta, 38, Barcelona",655576998,0));
-discotecas.push(new Discoteca("Bling Bling Barcelona",3, "Plaça Rosa Del Vents 1, Barcelona",664244209,5));
+var discotecas = [new Discoteca(1,"Pacha Barcelona","Passeig Marítim de la Barceloneta, 34, Barcelona",647835751, 0.5)];
+discotecas.push(new Discoteca(2,"Opium Barcelona","asseig Marítim de la Barceloneta, 38, Barcelona",655576998,0));
+discotecas.push(new Discoteca(3,"Bling Bling Barcelona", "Plaça Rosa Del Vents 1, Barcelona",664244209,5));
 
 ---
 
@@ -24,11 +24,11 @@ discotecas.push(new Discoteca("Bling Bling Barcelona",3, "Plaça Rosa Del Vents 
     <h3>Hola de nuevo!</h3>
     <div class="two-divs-container">
         <div class="resenas-recientes">
-            <h3>Rese&ntilde;as recientes</h3>
+            <h3 class="white">Rese&ntilde;as recientes</h3>
             <div class="row-container">
                 {resenas_recientes.map((review) => (
                   <div class="row">
-                    <h5>{review.discoId}</h5>
+                    <h5 class="margin-5">{review.discoId}</h5>
                     <p>{review.comment}</p>
                   </div>
                 ))}
@@ -36,11 +36,11 @@ discotecas.push(new Discoteca("Bling Bling Barcelona",3, "Plaça Rosa Del Vents 
         </div>
 
         <div class="discotecas-trending">
-            <h3>Discotecas trending</h3>
+            <h3 class="white">Discotecas trending</h3>
             <div class="row-container">
                 {discotecas.map((discoteca) => (
                   <div class="row">
-                    <h5>{discoteca.name}</h5>
+                    <h5 class="margin-5">{discoteca.name}</h5>
                     <p>{discoteca.rate}</p>
                   </div>
                 ))}

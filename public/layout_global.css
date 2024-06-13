@@ -75,14 +75,26 @@ div.fields {
 .two-divs-container {
     display: flex;
     justify-content: space-between;
-    height: 40vh;
+    height: 80vh;
 }
 
-.resenas-recientes,
+.resenas-recientes {
+    width: 48%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, green, blue);
+}
+.white {
+    color: white;
+}
+.margin-5 {
+    margin-right: 5px !important;
+}
 .discotecas-trending {
     width: 48%;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    background-image: linear-gradient(to right, red, pink);
 }
 
 .resenas-recientes .row-container, .discotecas-trending .row-container {
