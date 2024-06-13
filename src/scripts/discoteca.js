@@ -1,10 +1,12 @@
 // /src/scripts/discoteca.js
 
 export default class Discoteca {
-    constructor(name, email, password) {
+    constructor(id, name, address, telephoneNumber, rate) {
         this.name = name;
-        this.email = email;
-        this.password = password;
+        this.id = id;
+        this.address = address;
+        this.telephoneNumber = telephoneNumber;
+        this.rate = rate;
     }
 
     greet() {
