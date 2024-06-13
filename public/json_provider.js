@@ -1,3 +1,7 @@
+
+
 class JsonProvider {
-    
+    constructor() {
+        
+    }
 }
