@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    height: 300px;
-    width: 100%;
+    margin-right: 30px;
+    width: 35%;
 }
 .input-div {
     display: flex;
@@ -13,10 +13,13 @@
     flex-direction: column;
 }
 .search-label {
-    font-size: large;
+    font-size: 14px;
+    margin-right: 8px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .search-input {
-
     box-shadow: 0px 0px 10px gray;
+}
+.search-button {
+    
 }

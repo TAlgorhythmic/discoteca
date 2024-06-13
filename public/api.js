@@ -1,5 +1,7 @@
 import Usuario from "../src/scripts/usuario";
 
+
+
 export async function sendRequest(url, data, method) {
     try {
         const response = await fetch(url, {

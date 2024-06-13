@@ -1,5 +1,6 @@
 ---
 const { isLogged, isAdmin } = Astro.props;
+import Search from "./../comps/Search"
 ---
 
 <head>
@@ -16,10 +17,14 @@ const { isLogged, isAdmin } = Astro.props;
         <body>
             <div>
                 <nav class="navbar">
-                    <p><a class="item">Discotecas</a></p>
-                    <p><a class="item">Contáctanos</a></p>
-                    <p><a class="item">Subir reseña</a></p>
-                    <p><a class="item">Cuenta</a></p>
+                    <div class="eightypercent">
+                        <p><a class="item">Discotecas</a></p>
+                        <p><a class="item">Contáctanos</a></p>
+                        <p><a class="item">Subir reseña</a></p>
+                        <p><a class="item">Cuenta</a></p>
+                    </div>
+                    
+                    <Search/>
                 </nav>
             </div>
             <slot />
