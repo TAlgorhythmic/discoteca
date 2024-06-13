@@ -4,19 +4,17 @@ import {createUser} from "./../../public/api.js";
 import Usuario from "./../../src/scripts/usuario";
 import {addButtonListener} from "./../../src/scripts/buttonListener";
 
-function suma( a: any, b: any) {
-    return a + b;
-}
 
-function f() {
-    suma(1, 2);
-}
-
-
-function tryToLogIn(name: string, password: string) {
+async function tryToLogIn(name: string, password: string) {
     var user: Usuario = new Usuario(name, "something", password);
     console.log("This is working");
-    createUser(user);
+    //createUser(user);
+
+    const data = await Astro.request.formData();
+    const name2 = data.get("username");
+    //const email = data.get("email");
+    const password2 = data.get("password");
+    console.log(name2.toString());
 }
 
 
@@ -43,8 +41,10 @@ if (typeof window !== 'undefined') {
   addButtonListener(buttonId);
 }
 
+/*
 var user = new Usuario("A", "something", "1234");
 createUser(user);
+*/
 
 ---
 

@@ -1,0 +1,37 @@
+---
+import Controlador from "./../../public/controlador";
+import Layout from "./layouts/layout_global.astro";
+import {getDiscotecas} from "./../../public/api.js";
+import {getResenasRecientes} from "./../../public/api.js";
+//import Discoteca from "./../../src/scripts/discoteca.js";
+import Review from "./../../src/scripts/review.js";
+
+
+var discotecas: Array<any> = await getDiscotecas();
+var resenas_recientes: Array<Review> = await getResenasRecientes();
+
+---
+
+
+<Layout>
+    <h3>Hola de nuevo!</h3>
+    <div class="resenas-recientes">
+        <label>Rese&ntilde;as recientes</label>
+        <ul>
+            {resenas_recientes.map((name) => (
+              <li>{name}</li>
+            ))}
+        </ul>
+
+
+    </div>
+    <div class="discotecas-trending">
+        <h4>Discotecas trending</h4>
+        <ul>
+            {discotecas.map((name) => (
+              <li>{name}</li>
+            ))}
+        </ul>
+    </div>
+</Layout>
+

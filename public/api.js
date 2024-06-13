@@ -1,5 +1,3 @@
-import Usuario from "../src/scripts/usuario";
-
 export async function sendRequest(url, data, method) {
     try {
         const response = await fetch(url, {
@@ -31,6 +29,49 @@ export async function createUser(usuario) {
     catch (error) {
         console.log("No se ha podido crear el usuario");
     }
+}
 
-    console.log("fin de funcion");
+export async function getDiscotecas() {
+
+    try {
+        var response = await sendRequest("", null,'GET');
+        return response;
+    }
+    catch (error) {
+        console.log("No se han podido obtener las discotecas");
+        return [];
+    }
+}
+
+// obtiene los comentarios de un usuario
+export async function getCommentarios(user) {
+    try {
+        var response = await sendRequest("", user, 'POST');
+        return response;
+    }
+    catch (error) {
+        console.log("No se han podido obtener los comentarios de este usuario");
+    }
+}
+
+export async function getToken() {
+    try {
+        var response = await sendRequest("", null, 'GET');
+        return response;
+    }
+    catch (error) {
+        console.log("Fatal error id, token was not retrieved!");
+    }
+}
+
+// obtains only the 10 most recent reseñas
+export async function getResenasRecientes() {
+    try {
+        var response = await sendRequest("", null, 'GET');
+        return response;
+    }
+    catch (error) {
+        console.log("Error no se han podido obtener las reseñas");
+        return [];
+    }
 }
