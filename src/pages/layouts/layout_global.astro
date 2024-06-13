@@ -1,0 +1,35 @@
+---
+const { isLogged, isAdmin } = Astro.props;
+---
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>discotecas</title>
+    <link rel="stylesheet" href="/layout_global.css" />
+</head>
+
+<html lang="es">
+    <body>
+        <body>
+            <div>
+                <nav class="navbar">
+                    <p><a class="item">Discotecas</a></p>
+                    <p><a class="item">Contáctanos</a></p>
+                    <p><a class="item">Subir reseña</a></p>
+                    <p><a class="item">Cuenta</a></p>
+                </nav>
+            </div>
+            <slot />
+            <div class="flex-container">
+                <img class="footerimage" />
+                <div class="fields">
+                    <p class="field">Telefono: 972497932</p>
+                    <p class="field">email: algo@gmail.com</p>
+                </div>
+            </div>
+        </body>
+    </body>
+</html>
