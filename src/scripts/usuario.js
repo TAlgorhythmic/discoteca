@@ -1,3 +1,5 @@
+
+
 export default class Usuario {
     constructor(name, email, password) {
         this.name = name;

@@ -1,7 +1,7 @@
 nav.navbar {
     height: 60px;
     width: 100%;
-    background-color: gainsboro;
+    background-color: lightgreen;
     border: 1px solid gainsboro;
     display: flex;
     justify-content: center;
@@ -22,6 +22,11 @@ a.item {
     margin-left: 30px;
     margin-right: 30px;
     font-weight: bold;
+    color: white;
+}
+
+a.item:hover {
+    color: black;
 }
 body {
     margin: 0px;
@@ -94,7 +99,7 @@ div.fields {
     border-radius: 10px;
     background-color: white;
     padding: 10px;
-    width: calc(100% - 40px);
+    width: calc(100% - 40px) !important;
 }
 
 .row h5 {

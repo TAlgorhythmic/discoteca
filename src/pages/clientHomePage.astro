@@ -1,7 +1,6 @@
 ---
 import Layout from "./layouts/layout_global.astro";
-import {getDiscotecas} from "./../../public/api.js";
-import {getResenasRecientes} from "./../../public/api.js";
+import {getDiscotecas, getResenasRecientes} from "./../../public/api.js";
 import Review from "./../../src/scripts/review.js";
 
 var discotecas = await getDiscotecas();
@@ -21,7 +20,7 @@ resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
     <h3>Hola de nuevo!</h3>
     <div class="two-divs-container">
         <div class="resenas-recientes">
-            <h4>Rese&ntilde;as recientes</h4>
+            <h3>Rese&ntilde;as recientes</h3>
             <div class="row-container">
                 {resenas_recientes.map((review) => (
                   <div class="row">
@@ -33,7 +32,7 @@ resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
         </div>
 
         <div class="discotecas-trending">
-            <h4>Discotecas trending</h4>
+            <h3>Discotecas trending</h3>
             <div class="row-container">
                 {discotecas.map((discoteca) => (
                   <div class="row">
