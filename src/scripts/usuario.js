@@ -9,3 +9,5 @@ export default class Usuario {
         return `Hello, ${this.name}!`;
     }
 }
+
+export {user};
