@@ -56,3 +56,10 @@ div.fields {
 .resenas-recientes {
     border: 1px soldi black;
 }
+.super-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}

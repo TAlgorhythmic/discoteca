@@ -1,0 +1,8 @@
+.discoteca-div {
+    width: 45%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    justify-content: left;
+}
