@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-=======
-let user = null;
->>>>>>> 56bea8a (Update.)
-
 export default class Usuario {
     constructor(name, email, password) {
         this.name = name;
