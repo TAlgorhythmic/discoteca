@@ -2,8 +2,9 @@
 import Layout from "./layouts/layout_global.astro";
 import {getDiscotecas, getResenasRecientes} from "./../../public/api.js";
 import Review from "./../../src/scripts/review.js";
+import Discoteca from "./../../src/scripts/discoteca.js";
 
-var discotecas = await getDiscotecas();
+// var discotecas = await getDiscotecas();
 //var resenas_recientes = await getResenasRecientes();
 var resenas_recientes = [new Review(1, "Esto es un comentario!", 1, 1, 0.5)];
 resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
@@ -13,6 +14,9 @@ resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 
+var discotecas = [new Discoteca("Pacha Barcelona",1,"Passeig Marítim de la Barceloneta, 34, Barcelona",647835751, 0.5)];
+discotecas.push(new Discoteca("Opium Barcelona",2,"asseig Marítim de la Barceloneta, 38, Barcelona",655576998,0));
+discotecas.push(new Discoteca("Bling Bling Barcelona",3, "Plaça Rosa Del Vents 1, Barcelona",664244209,5));
 
 ---
 
@@ -37,7 +41,7 @@ resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
                 {discotecas.map((discoteca) => (
                   <div class="row">
                     <h5>{discoteca.name}</h5>
-                    <p>{discoteca.score}</p>
+                    <p>{discoteca.rate}</p>
                   </div>
                 ))}
             </div>
