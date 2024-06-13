@@ -7,6 +7,12 @@ import Review from "./../../src/scripts/review.js";
 var discotecas = await getDiscotecas();
 //var resenas_recientes = await getResenasRecientes();
 var resenas_recientes = [new Review(1, "Esto es un comentario!", 1, 1, 0.5)];
+resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
+resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
+resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
+resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
+resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
+resenas_recientes.push(new Review(1, "Esto es un comentario!", 1, 1, 0.5));
 
 
 ---
@@ -16,9 +22,9 @@ var resenas_recientes = [new Review(1, "Esto es un comentario!", 1, 1, 0.5)];
     <div class="two-divs-container">
         <div class="resenas-recientes">
             <h4>Rese&ntilde;as recientes</h4>
-            <div class="comment-container">
+            <div class="row-container">
                 {resenas_recientes.map((review) => (
-                  <div class="comment">
+                  <div class="row">
                     <h5>{review.discoId}</h5>
                     <p>{review.comment}</p>
                   </div>
@@ -28,11 +34,14 @@ var resenas_recientes = [new Review(1, "Esto es un comentario!", 1, 1, 0.5)];
 
         <div class="discotecas-trending">
             <h4>Discotecas trending</h4>
-            <ul>
+            <div class="row-container">
                 {discotecas.map((discoteca) => (
-                  <li>{discoteca.name}</li>
+                  <div class="row">
+                    <h5>{discoteca.name}</h5>
+                    <p>{discoteca.score}</p>
+                  </div>
                 ))}
-            </ul>
+            </div>
         </div>
     </div>
 </Layout>

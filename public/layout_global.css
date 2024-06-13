@@ -27,6 +27,7 @@ body {
     margin: 0px;
     padding: 0px;
     height: 100%;
+    overflow: hidden;
 }
 .footer {
     width: 100%;
@@ -63,42 +64,47 @@ div.fields {
     flex: 1;
     width: calc(50% - 20px);
     margin: 10px;
-    padding: 5px;
-    border: 1px solid black;
 }
 
 .two-divs-container {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
+    height: 40vh;
 }
 
 .resenas-recientes,
 .discotecas-trending {
     width: 48%;
     border: 1px solid #ccc;
-    padding: 10px;
     box-sizing: border-box;
-    overflow-y: auto;
 }
 
-.resenas-recientes .comment-container {
-    max-height: 80vh; /* Ajusta este valor según sea necesario */
-    overflow-y: auto;
+.resenas-recientes .row-container, .discotecas-trending .row-container {
+    max-height: 60vh; /* Ajusta este valor según sea necesario */
+    background-color: lightgreen;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y:scroll;
 }
 
-.resenas-recientes .comment {
+.row {
     margin-bottom: 20px;
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    width: calc(100% - 40px);
 }
 
-.resenas-recientes .comment h5 {
+.row h5 {
     margin: 0 0 5px 0;
 }
 
-.resenas-recientes .comment p {
+.row p {
     margin: 0;
-    white-space: pre-wrap; /* Para que el texto largo se ajuste en múltiples líneas */
-    word-wrap: break-word; /* Para que las palabras largas se rompan en la siguiente línea */
+    /*white-space: pre-wrap; /* Para que el texto largo se ajuste en múltiples líneas */
+    /*word-wrap: break-word; /* Para que las palabras largas se rompan en la siguiente línea */
 }
 
 .discotecas-trending ul,
@@ -118,3 +124,4 @@ div.fields {
     justify-content: center;
     flex-direction: row;
 }
+
